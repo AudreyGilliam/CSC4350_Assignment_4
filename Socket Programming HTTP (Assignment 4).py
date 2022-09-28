@@ -10,29 +10,48 @@ should send an HTTP "404 Not Found" message back to the client.'''
 '''USE A DIFFERENT BLOCK OF TEXT TO DESCRIBE PROGRAM'''
 
 
+from sys import stderr
+import sys
 #import socket
 from socket import *
-#requests library
-import requests
+import argparse 
 #create a server port
-serverPort = 8080
-
+serverPort = 8000
+#create an instance of TCP
 serverSocket = socket(AF_INET, SOCK_STREAM)
+#bind
 serverSocket.bind(('', serverPort))
+#listen for instructions
 serverSocket.listen(1)
+#print statement
 print("The server is ready to receive")
 
 
+while True:
+    try:
+        connectionSocket, addr = serverSocket.accept()
 
-'''while True:
-    connectionSocket, addr = serverSocket.accept()
+        sentence = connectionSocket.recv(1024).decode()
 
-    sentence = connectionSocket.recv(1024).decode()
+        #open and read file
 
-    connectionSocket.send(sentence.upper().encode())
+        #look at resource and look at file system to make sure that resource exists
+        #return file
 
-    connectionSocket.close()'''
+        #send back HTTP header
 
-#r = requests.get('http://codesource.io/')
+        sentence = "HTTP/1.1 200 OK\r\n\r\n"
 
-#print(r.status_code)
+        #sentence = "HTTP/1.1 404 Not Found\r\n\r\n"
+
+        #work on doing 404, have case where you find resourse
+        #check for exists, if does send 200 if not send 404
+        #send back 
+
+        connectionSocket.send(sentence.encode())
+
+        connectionSocket.close()
+        
+    except KeyboardInterrupt:
+        sys.exit()
+
