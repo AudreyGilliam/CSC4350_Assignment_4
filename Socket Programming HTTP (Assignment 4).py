@@ -7,8 +7,6 @@ requested file preceded by header lines, and then send the response directly
 to the client. If the requested file is not present in the server, the server
 should send an HTTP "404 Not Found" message back to the client.'''
 
-'''USE A DIFFERENT BLOCK OF TEXT TO DESCRIBE PROGRAM'''
-
 
 from sys import stderr
 import sys
