@@ -3,7 +3,7 @@
 Simple web server that handles one HTTP request at a time
 
 How to run:
-Run program, go to browser and type in bar "http://1.7.0.0.1:8000"
+Run program, go to browser and type in bar "http://127.0.0.1:8000"
 
 Requirements not implemented:
 no if then statement for the 200 or 404
