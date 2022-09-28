@@ -7,7 +7,7 @@ Run program, go to browser and type in bar "http://1.7.0.0.1:8000"
 
 Requirements not implemented:
 no if then statement for the 200 or 404
-have not created an index file
+and have not created an index file
 
 
 ***Should accept and parse the HTTP request, get the requested
